@@ -9,7 +9,7 @@
     "children": [],
     "name": "Default",
   },
-  "defaultScriptType": 0,
+  "defaultScriptType": 1,
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Anotações","folderPath":"folders/Anotações.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Caminhos","folderPath":"folders/Caminhos.yy",},
@@ -41,6 +41,7 @@
     {"id":{"name":"Inimigo_n","path":"objects/Inimigo_n/Inimigo_n.yy",},},
     {"id":{"name":"teto","path":"objects/teto/teto.yy",},},
     {"id":{"name":"sInimigo_normal","path":"sprites/sInimigo_normal/sInimigo_normal.yy",},},
+    {"id":{"name":"camara","path":"objects/camara/camara.yy",},},
     {"id":{"name":"sTerra","path":"sprites/sTerra/sTerra.yy",},},
     {"id":{"name":"sInimigo_ataque","path":"sprites/sInimigo_ataque/sInimigo_ataque.yy",},},
     {"id":{"name":"sChao","path":"sprites/sChao/sChao.yy",},},

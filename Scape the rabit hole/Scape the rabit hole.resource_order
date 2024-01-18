@@ -23,6 +23,7 @@
     {"name":"Inimigo_n","order":4,"path":"objects/Inimigo_n/Inimigo_n.yy",},
     {"name":"teto","order":2,"path":"objects/teto/teto.yy",},
     {"name":"sInimigo_normal","order":6,"path":"sprites/sInimigo_normal/sInimigo_normal.yy",},
+    {"name":"camara","order":5,"path":"objects/camara/camara.yy",},
     {"name":"sTerra","order":3,"path":"sprites/sTerra/sTerra.yy",},
     {"name":"sInimigo_ataque","order":8,"path":"sprites/sInimigo_ataque/sInimigo_ataque.yy",},
     {"name":"sChao","order":1,"path":"sprites/sChao/sChao.yy",},
