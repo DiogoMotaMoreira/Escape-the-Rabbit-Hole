@@ -12,9 +12,9 @@ hsp = move  * walksp;
 vsp = vsp + grv;
 
 // Salto
-if ((place_meeting(x,y+1,chao)) && (key_salto) && (!place_meeting(x,y-8,teto))) // 8 é o ponto minimo a adicionar para detetar teto a um bloco em cima
+if ((place_meeting(x,y+1,chao)) && (key_salto)) // 8 é o ponto minimo a adicionar para detetar teto a um bloco em cima
 {
-	vsp = -7; 
+	vsp = salto; 
 }
 
 
@@ -30,16 +30,16 @@ if (place_meeting(x+hsp,y,parede) || place_meeting(x+hsp,y,chao) || place_meetin
 x = x +hsp;
 
 
-// colisão chão -- Gravidade
-if (place_meeting(x,y+vsp,chao) || place_meeting(x,y+vsp,parede))
+// colisão chão/teto -- Gravidade
+if (place_meeting(x,y+vsp,chao) || place_meeting(x,y+vsp,parede) || place_meeting(x,y+vsp,teto))
 {
-	if (!place_meeting(x,y+sign(vsp),chao) && (!place_meeting(x,y+sign(vsp),parede))) // sign é mais um ou menos um dependendo do sinal
+	if (!place_meeting(x,y+sign(vsp),chao) && (!place_meeting(x,y+sign(vsp),parede)) && (!place_meeting(x,y+sign(vsp),teto))) 
 	{
 		y = y + sign(vsp);
 	}
 	vsp = 0;
 }
-y = y +vsp
+y = y +vsp;
 
 
 
@@ -47,7 +47,7 @@ y = y +vsp
 // movimento de imagens
 if (!place_meeting(x,y+1,chao))
 {
-	sprite_index = sPlayer;
+	sprite_index = sPlayer_sq;
 	image_speed = 0;
 	
 } else 
@@ -57,6 +57,7 @@ if (!place_meeting(x,y+1,chao))
 		sprite_index = sPlayer_andar_d;
 		image_speed  = 1;
 	} else image_speed = 0;
+	sprite_index = sPlayer_andar_d;
 }
 
 if (hsp != 0) then image_xscale = sign(hsp);
