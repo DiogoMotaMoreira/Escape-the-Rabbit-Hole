@@ -5,6 +5,8 @@ grv    = 0.5; // gravidade
 walksp = 4; // velocidade do andar
 salto  = -7;
 
-hp = 3; // vida inicial
+global.hp = 3; // vida inicial
+armado = false; 
+global.n_municao = 0; // quantidade de municao
 
 
