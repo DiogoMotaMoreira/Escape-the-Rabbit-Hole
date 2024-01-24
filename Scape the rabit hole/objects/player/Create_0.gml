@@ -9,4 +9,6 @@ global.hp = 3; // vida inicial
 armado = false; 
 global.n_municao = 0; // quantidade de municao
 
+global.n_moedas =  0;
+
 

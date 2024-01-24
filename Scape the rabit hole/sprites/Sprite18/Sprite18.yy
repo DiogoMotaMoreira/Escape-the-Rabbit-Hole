@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "Scape the rabit hole",
-    "path": "Scape the rabit hole.yyp",
+    "name": "mapa-exterior",
+    "path": "folders/Sprites/mapa-exterior.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

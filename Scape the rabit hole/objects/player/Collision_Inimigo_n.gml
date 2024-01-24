@@ -1,4 +1,4 @@
 global.hp = global.hp -1;
 
-x = xstart;
-y = ystart;
+x = start_pos.x;
+y = start_pos.y;

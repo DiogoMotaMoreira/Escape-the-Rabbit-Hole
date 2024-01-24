@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "sFundo",
-  "bbox_bottom": 107,
+  "bbox_bottom": 199,
   "bbox_left": 0,
-  "bbox_right": 191,
+  "bbox_right": 199,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,20 +13,20 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b27c5c85-9b3b-4644-a6cf-2e7b6330f8b5",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"04c245ba-a72f-43af-9bd0-d494c26fd546",},
   ],
-  "gridX": 0,
-  "gridY": 0,
-  "height": 108,
+  "gridX": 50,
+  "gridY": 50,
+  "height": 200,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"4ccc61d3-aa0d-4578-a2c2-2157bb6a35f8","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"cbe484bf-be84-41cd-8e12-da9139755778","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "mapa-gruta",
-    "path": "folders/Sprites/mapa-gruta.yy",
+    "name": "mapa-toca",
+    "path": "folders/Sprites/mapa-toca.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b27c5c85-9b3b-4644-a6cf-2e7b6330f8b5","path":"sprites/sFundo/sFundo.yy",},},},"Disabled":false,"id":"406b766a-6883-4492-b51f-c8578f42b94e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"04c245ba-a72f-43af-9bd0-d494c26fd546","path":"sprites/sFundo/sFundo.yy",},},},"Disabled":false,"id":"f1195e01-8bef-487f-b234-5a7dbf4cda37","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 192,
+  "width": 200,
 }

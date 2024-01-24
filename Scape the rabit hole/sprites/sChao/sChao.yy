@@ -5,8 +5,8 @@
   "bbox_bottom": 49,
   "bbox_left": 0,
   "bbox_right": 49,
-  "bbox_top": 0,
-  "bboxMode": 0,
+  "bbox_top": 5,
+  "bboxMode": 2,
   "collisionKind": 1,
   "collisionTolerance": 0,
   "DynamicTexturePage": false,
@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "mapa-gruta",
-    "path": "folders/Sprites/mapa-gruta.yy",
+    "name": "mapa-toca",
+    "path": "folders/Sprites/mapa-toca.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -13,10 +13,10 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6c2a8752-6e52-4709-b81e-cf0df2765f8d",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"deeb62d0-2b88-4269-868d-0eb7abad4af8",},
   ],
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 3,
+  "gridY": 3,
   "height": 50,
   "HTile": false,
   "layers": [
@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "mapa-gruta",
-    "path": "folders/Sprites/mapa-gruta.yy",
+    "name": "mapa-toca",
+    "path": "folders/Sprites/mapa-toca.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6c2a8752-6e52-4709-b81e-cf0df2765f8d","path":"sprites/sTerra/sTerra.yy",},},},"Disabled":false,"id":"0d9a19ec-734e-4f25-a4da-68b9c053ffda","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"deeb62d0-2b88-4269-868d-0eb7abad4af8","path":"sprites/sTerra/sTerra.yy",},},},"Disabled":false,"id":"a4dc8844-c95d-4304-b855-d4d3fe648583","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

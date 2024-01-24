@@ -7,14 +7,6 @@ var key_salto    = keyboard_check(vk_space);
 var key_tiro     = keyboard_check_pressed(ord("X"));
 #endregion
 
-#region Mundança de Room
-if room == Exterior
-{
-	if place_meeting(x,y,tocaEntrada) then room = Caverna;	
-}
-
-#endregion
-
 #region Movimentos
 var move = key_direita - key_esquerda; // para quando precionamos ambas as teclas sair movimento fluido
 
@@ -104,6 +96,13 @@ if (armado == true) && key_tiro
 		image_angle = direction;
 	}
 	
+}
+#endregion
+
+#region Moedas
+if place_meeting(x,y,moeda)
+{
+	global.n_moedas = global.n_moedas + 1;
 }
 #endregion
 
