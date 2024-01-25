@@ -1,3 +1,3 @@
 targetRoom = Lobby;
-targetx = 500;
-targety = 500;
+targetx = 1200;
+targety = 600;

@@ -6,9 +6,12 @@ walksp = 4; // velocidade do andar
 salto  = -7;
 
 global.hp = 3; // vida inicial
-armado = false; 
+global.armado = false; // armado
 global.n_municao = 0; // quantidade de municao
+global.n_moedas =  50;
 
-global.n_moedas =  0;
+// items
 
-
+global.pistola     = false;
+global.duplo_salto = false;
+global.moedas2x    = false;

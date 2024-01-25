@@ -15,16 +15,17 @@ hsp = move  * walksp;
 vsp = vsp + grv;
 
 // Salto
-if ((place_meeting(x,y+1,toca_chao) || (place_meeting(x,y+1,ex_solo1)))  && (key_salto)) // 8 é o ponto minimo a adicionar para detetar teto a um bloco em cima
+if ((place_meeting(x,y+1,toca_chao) || (place_meeting(x,y+1,ex_solo1)))  && (key_salto) || (place_meeting(x,y+1,chao_lb))  && (key_salto)) // 8 é o ponto minimo a adicionar para detetar teto a um bloco em cima
 {
+	audio_play_sound(sound_jump,0,false)
 	vsp = salto; 
 }
 
 
 // colisao parede horizontal
-if (place_meeting(x+hsp,y,toca_parede) || place_meeting(x+hsp,y,toca_chao) || place_meeting(x+hsp,y,toca_teto) || place_meeting(x+hsp,y,ex_solo1))
+if (place_meeting(x+hsp,y,toca_parede) || place_meeting(x+hsp,y,toca_chao) || place_meeting(x+hsp,y,toca_teto) || place_meeting(x+hsp,y,ex_solo1) || place_meeting(x+hsp,y,chao_lb))
 {
-	while (!place_meeting(x+sign(hsp),y,toca_parede) && (!place_meeting(x+sign(hsp),y,toca_chao)) && (!place_meeting(x+sign(hsp),y,toca_teto)) && (!place_meeting(x+sign(hsp),y,ex_solo1))) // sign é mais um ou menos um dependendo do sinal
+	while (!place_meeting(x+sign(hsp),y,toca_parede) && (!place_meeting(x+sign(hsp),y,toca_chao)) && (!place_meeting(x+sign(hsp),y,toca_teto)) && (!place_meeting(x+sign(hsp),y,ex_solo1)) && (!place_meeting(x+sign(hsp),y,chao_lb))) // sign é mais um ou menos um dependendo do sinal
 	{
 		x = x + sign(hsp);
 	}
@@ -32,6 +33,7 @@ if (place_meeting(x+hsp,y,toca_parede) || place_meeting(x+hsp,y,toca_chao) || pl
 }
 
 if room == Exterior 
+
 {
 	if x + hsp <= 0
 	{
@@ -52,13 +54,35 @@ if room == Exterior
 	}
 }
 
+if room == Lobby 
+
+{
+	if x + hsp <= 0
+	{
+		while x + sign(hsp) != 0
+		{
+			x = x + sign(hsp);
+		}
+		hsp = 0;
+	}
+	
+	if x + hsp >= 1280
+	{
+		while x + sign(hsp) != 1280
+		{
+			x = x + sign(hsp);
+		}
+		hsp = 0;
+	}
+}
+
 x = x +hsp;
 
 
 // colisão chão/teto -- Gravidade
-if (place_meeting(x,y+vsp,toca_chao) || place_meeting(x,y+vsp,toca_parede) || place_meeting(x,y+vsp,toca_teto) || place_meeting(x,y+vsp,ex_solo1))
+if (place_meeting(x,y+vsp,toca_chao) || place_meeting(x,y+vsp,toca_parede) || place_meeting(x,y+vsp,toca_teto) || place_meeting(x,y+vsp,ex_solo1) || place_meeting(x,y+vsp,chao_lb))
 {
-	if (!place_meeting(x,y+sign(vsp),toca_chao) && (!place_meeting(x,y+sign(vsp),toca_parede)) && (!place_meeting(x,y+sign(vsp),toca_teto)) && (!place_meeting(x,y+sign(vsp),ex_solo1))) 
+	if (!place_meeting(x,y+sign(vsp),toca_chao) && (!place_meeting(x,y+sign(vsp),toca_parede)) && (!place_meeting(x,y+sign(vsp),toca_teto)) && (!place_meeting(x,y+sign(vsp),ex_solo1))&& (!place_meeting(x,y+sign(vsp),chao_lb))) 
 	{
 		y = y + sign(vsp);
 	}
@@ -74,17 +98,18 @@ var _xx     = x + lengthdir_x(15,image_angle); // serve para fazer tiros
 
 if place_meeting(x,y,arma)
 {
-	armado = true;
+	global.armado = true;
 	global.n_municao = global.n_municao + 5;
 }
 
 if (global.n_municao == 0)
 {
-	armado = false;
+	global.armado = false;
 }
 
-if (armado == true) && key_tiro
+if (global.armado == true) && key_tiro
 {
+	audio_play_sound(sound_tiro,0,false);
 	with ( instance_create_layer(_xx,y-25,"items", municao))
 	{
 		global.n_municao = global.n_municao -1;
@@ -99,6 +124,16 @@ if (armado == true) && key_tiro
 }
 #endregion
 
+#region Vida
+if global.hp == -1
+{
+	room_goto(Exterior);
+	global.hp = 3;
+	x = 280;
+	y = 640;
+}
+#endregion
+
 #region Moedas
 if place_meeting(x,y,moeda)
 {
@@ -108,7 +143,7 @@ if place_meeting(x,y,moeda)
 
 #region imagens
 // movimento de imagens
-if (!place_meeting(x,y+1,toca_chao) && !place_meeting(x,y+1,ex_solo1))
+if (!place_meeting(x,y+1,toca_chao) && !place_meeting(x,y+1,ex_solo1) && !place_meeting(x,y+1,chao_lb))
 {
 	sprite_index = sPlayer_sq;
 	image_speed = 0;
@@ -132,4 +167,3 @@ if (global.n_municao > 0)
 }
 
 #endregion
-	
