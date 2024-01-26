@@ -29,7 +29,7 @@
   "origin": 0,
   "parent": {
     "name": "cartas",
-    "path": "folders/Sprites/cartas.yy",
+    "path": "folders/Sprites/items/cartas.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

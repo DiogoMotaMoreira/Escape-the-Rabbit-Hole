@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "mapa-exterior",
-    "path": "folders/Sprites/mapa-exterior.yy",
+    "path": "folders/Sprites/items/mapa-exterior.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -1,3 +1,5 @@
+if global.pause == false
+{
 #region Movimentos
 vsp = vsp + grv;
 	
@@ -53,3 +55,4 @@ else
 	image_index = 1;
 }
 #endregion
+}

@@ -35,7 +35,7 @@
   "origin": 4,
   "parent": {
     "name": "numeros",
-    "path": "folders/Sprites/numeros.yy",
+    "path": "folders/Sprites/items/numeros.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

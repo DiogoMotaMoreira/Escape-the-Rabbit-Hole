@@ -7,11 +7,16 @@ salto  = -7;
 
 global.hp = 3; // vida inicial
 global.armado = false; // armado
+
 global.n_municao = 0; // quantidade de municao
-global.n_moedas =  50;
+global.n_moedas = 50;
+
+global.level = 1; // nivel permitido
 
 // items
-
 global.pistola     = false;
 global.duplo_salto = false;
 global.moedas2x    = false;
+
+
+global.pause = false;
