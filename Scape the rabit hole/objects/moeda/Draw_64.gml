@@ -1,9 +1,9 @@
 draw_sprite(sMoeda,0,50,50);
 
-var x1 = global.n_moedas%10
-var x2 = (global.n_moedas div 10)%10
-var x3 = (global.n_moedas div 100)%10
-var x4 = (global.n_moedas div 1000)%10
+var x1 = (global.n_moedas)%10;
+var x2 = (global.n_moedas div 10)%10;
+var x3 = (global.n_moedas div 100)%10;
+var x4 = (global.n_moedas div 1000)%10;
 
 
 if x4 == 0 then draw_sprite(numeros,0,100,50);

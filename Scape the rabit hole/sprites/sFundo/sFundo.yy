@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "mapa-toca",
-    "path": "folders/Sprites/items/mapa-exterior/mapa-toca.yy",
+    "path": "folders/Sprites/mapa-toca.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

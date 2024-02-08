@@ -10,14 +10,14 @@
   "bitRate": 128,
   "compression": 0,
   "conversionMode": 0,
-  "duration": 359.9093,
+  "duration": 64.07835,
   "parent": {
     "name": "music",
     "path": "folders/Sons/music.yy",
   },
   "preload": false,
   "sampleRate": 44100,
-  "soundFile": "sound_caverna.wav",
+  "soundFile": "sound_caverna.mp3",
   "type": 0,
-  "volume": 1.0,
+  "volume": 0.5,
 }

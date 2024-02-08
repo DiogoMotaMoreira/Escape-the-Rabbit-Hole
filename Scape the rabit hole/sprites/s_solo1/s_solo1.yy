@@ -6,14 +6,14 @@
   "bbox_left": 0,
   "bbox_right": 49,
   "bbox_top": 0,
-  "bboxMode": 0,
+  "bboxMode": 2,
   "collisionKind": 1,
   "collisionTolerance": 0,
   "DynamicTexturePage": false,
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"baf7ee4e-5b13-4503-98a1-fa97ebabbd9f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"cbdaa4ea-f3e8-4829-b724-df3677bc651d",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -26,7 +26,7 @@
   "origin": 0,
   "parent": {
     "name": "mapa-exterior",
-    "path": "folders/Sprites/items/mapa-exterior.yy",
+    "path": "folders/Sprites/mapa-exterior.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"baf7ee4e-5b13-4503-98a1-fa97ebabbd9f","path":"sprites/s_solo1/s_solo1.yy",},},},"Disabled":false,"id":"11529349-4c41-461a-8ba8-645edbb218f8","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"cbdaa4ea-f3e8-4829-b724-df3677bc651d","path":"sprites/s_solo1/s_solo1.yy",},},},"Disabled":false,"id":"274dcd0d-701e-4dc4-88f4-2d0f6d5bcce7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

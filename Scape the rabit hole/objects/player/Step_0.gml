@@ -5,11 +5,29 @@ var key_cima     = keyboard_check(vk_up);
 var key_baixo    = keyboard_check(vk_down);
 var key_salto    = keyboard_check(vk_space);
 var key_tiro     = keyboard_check_pressed(ord("X"));
-var key_pause     = keyboard_check_pressed(ord("P"));
+var key_pause    = keyboard_check_pressed(ord("P"));
 #endregion
 
+// Load game
+if global.loadgame 
+{
+	ini_open("save.sav");
+	global.hp = ini_read_real("Jogador","Vida",3);
+	global.level = ini_read_real("Jogador","Nível máximo",1);
+	global.pistola = ini_read_string("Jogador","Pistola","false");
+	global.armado = ini_read_string("Jogador","Armado","false");
+	global.n_municao = ini_read_real("Jogador","Munição",0);
+	global.n_moedas = ini_read_real("Jogador","Moedas",0);
+	ini_close();	
+}
+
+
 // pausa
-if (key_pause) then global.pause = true;
+if (key_pause) 
+{
+	global.pause = true;
+	global.menu_pause = true;
+}
 
 if global.pause== false
 {
@@ -21,7 +39,7 @@ hsp = move  * walksp;
 if !place_meeting(x,y,escada_lb) then vsp = vsp + grv else vsp = 0;
 
 // Salto
-if ((place_meeting(x,y+1,toca_chao) || (place_meeting(x,y+1,ex_solo1)))  && (key_salto) || (place_meeting(x,y+1,chao_lb))  && (key_salto)) // 8 é o ponto minimo a adicionar para detetar teto a um bloco em cima
+if vsp >= 0 && ((place_meeting(x,y+1,toca_chao) || (place_meeting(x,y+1,ex_solo1)))  && (key_salto) || (place_meeting(x,y+1,chao_lb))  && (key_salto) || (place_meeting(x,y+1,tronco_plat))  && (key_salto)) // 8 é o ponto minimo a adicionar para detetar teto a um bloco em cima
 {
 	audio_play_sound(sound_jump,0,false)
 	vsp = salto; 
@@ -87,9 +105,9 @@ x = x +hsp;
 
 // colisão chão/teto -- Gravidade
 
-if (place_meeting(x,y+vsp,toca_chao) || place_meeting(x,y+vsp,toca_parede) || place_meeting(x,y+vsp,toca_teto) || place_meeting(x,y+vsp,ex_solo1) || (place_meeting(x,y+vsp,chao_lb)))
+if (place_meeting(x,y+vsp,toca_chao) || place_meeting(x,y+vsp,toca_parede) || place_meeting(x,y+vsp,toca_teto) || place_meeting(x,y+vsp,ex_solo1) || (place_meeting(x,y+vsp,chao_lb)) || (vsp>=0 && place_meeting(x,y+vsp,tronco_plat)))
 {
-	while (!place_meeting(x,y+sign(vsp),toca_chao) && (!place_meeting(x,y+sign(vsp),toca_parede)) && (!place_meeting(x,y+sign(vsp),toca_teto)) && (!place_meeting(x,y+sign(vsp),ex_solo1)) && (!place_meeting(x,y+sign(vsp),chao_lb))) 
+	while (!place_meeting(x,y+sign(vsp),toca_chao) && (!place_meeting(x,y+sign(vsp),toca_parede)) && (!place_meeting(x,y+sign(vsp),toca_teto)) && (!place_meeting(x,y+sign(vsp),ex_solo1)) && (!place_meeting(x,y+sign(vsp),chao_lb)) && !place_meeting(x,y+sign(vsp),tronco_plat) ) 
 	{
 		y = y + sign(vsp);
 	}
@@ -151,9 +169,10 @@ if place_meeting(x,y,moeda)
 #region imagens
 // movimento de imagens
 
-if (!place_meeting(x,y+1,toca_chao) && !place_meeting(x,y+1,ex_solo1) && !place_meeting(x,y+1,chao_lb) && !place_meeting(x,y,escada_lb)) 
+image_speed = 1;
+
+if (!place_meeting(x,y+1,toca_chao) && !place_meeting(x,y+1,ex_solo1) && !place_meeting(x,y+1,chao_lb) && !place_meeting(x,y,escada_lb) && !place_meeting(x,y+1,tronco_plat)) 
 {
-	
 	if vsp <=0
 	{
 		sprite_index = sPlayer_sq;
@@ -172,7 +191,6 @@ if (!place_meeting(x,y+1,toca_chao) && !place_meeting(x,y+1,ex_solo1) && !place_
 	if (key_direita) || (key_esquerda)
 	{
 		sprite_index = sPlayer_andar;
-		image_speed  = 2;
 	}
 }
 else
@@ -180,7 +198,6 @@ else
 	if (key_cima) || (key_baixo)
 	{
 		sprite_index = sPlayer_escada;
-		image_speed  = 1;
 	}
 	
 	if vsp == 0 && hsp == 0 then image_speed = 0;
@@ -199,3 +216,4 @@ if (global.armado == true && global.n_municao > 0)
 
 #endregion
 }
+else image_speed = 0;
